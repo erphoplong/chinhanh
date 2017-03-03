@@ -1,0 +1,192 @@
+E:\New\ERP_14022017\ERP\ERP.Web\bin\roslyn\csc.exe
+E:\New\ERP_14022017\ERP\ERP.Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\New\ERP_14022017\ERP\ERP.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\New\ERP_14022017\ERP\ERP.Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\New\ERP_14022017\ERP\ERP.Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\New\ERP_14022017\ERP\ERP.Web\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\New\ERP_14022017\ERP\ERP.Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\New\ERP_14022017\ERP\ERP.Web\bin\roslyn\System.Collections.Immutable.dll
+E:\New\ERP_14022017\ERP\ERP.Web\bin\roslyn\System.Reflection.Metadata.dll
+E:\New\ERP_14022017\ERP\ERP.Web\bin\roslyn\vbc.exe
+E:\New\ERP_14022017\ERP\ERP.Web\bin\roslyn\VBCSCompiler.exe
+E:\New\ERP_14022017\ERP\ERP.Web\bin\roslyn\VBCSCompiler.exe.config
+E:\New\ERP_14022017\ERP\ERP.Web\bin\ERP.Web.dll.config
+E:\New\ERP_14022017\ERP\ERP.Web\bin\ERP.Web.dll
+E:\New\ERP_14022017\ERP\ERP.Web\bin\ERP.Web.pdb
+E:\New\ERP_14022017\ERP\ERP.Web\bin\Antlr3.Runtime.dll
+E:\New\ERP_14022017\ERP\ERP.Web\bin\EntityFramework.dll
+E:\New\ERP_14022017\ERP\ERP.Web\bin\EntityFramework.SqlServer.dll
+E:\New\ERP_14022017\ERP\ERP.Web\bin\EPPlus.dll
+E:\New\ERP_14022017\ERP\ERP.Web\bin\Microsoft.AI.Agent.Intercept.dll
+E:\New\ERP_14022017\ERP\ERP.Web\bin\Microsoft.AI.DependencyCollector.dll
+E:\New\ERP_14022017\ERP\ERP.Web\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\New\ERP_14022017\ERP\ERP.Web\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\New\ERP_14022017\ERP\ERP.Web\bin\Microsoft.AI.Web.dll
+E:\New\ERP_14022017\ERP\ERP.Web\bin\Microsoft.AI.WindowsServer.dll
+E:\New\ERP_14022017\ERP\ERP.Web\bin\Microsoft.ApplicationInsights.dll
+E:\New\ERP_14022017\ERP\ERP.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\New\ERP_14022017\ERP\ERP.Web\bin\Microsoft.Web.Infrastructure.dll
+E:\New\ERP_14022017\ERP\ERP.Web\bin\Newtonsoft.Json.dll
+E:\New\ERP_14022017\ERP\ERP.Web\bin\System.Net.Http.Formatting.dll
+E:\New\ERP_14022017\ERP\ERP.Web\bin\System.Web.Helpers.dll
+E:\New\ERP_14022017\ERP\ERP.Web\bin\System.Web.Http.dll
+E:\New\ERP_14022017\ERP\ERP.Web\bin\System.Web.Http.WebHost.dll
+E:\New\ERP_14022017\ERP\ERP.Web\bin\System.Web.Mvc.dll
+E:\New\ERP_14022017\ERP\ERP.Web\bin\System.Web.Optimization.dll
+E:\New\ERP_14022017\ERP\ERP.Web\bin\System.Web.Razor.dll
+E:\New\ERP_14022017\ERP\ERP.Web\bin\System.Web.WebPages.Deployment.dll
+E:\New\ERP_14022017\ERP\ERP.Web\bin\System.Web.WebPages.dll
+E:\New\ERP_14022017\ERP\ERP.Web\bin\System.Web.WebPages.Razor.dll
+E:\New\ERP_14022017\ERP\ERP.Web\bin\WebGrease.dll
+E:\New\ERP_14022017\ERP\ERP.Web\bin\EntityFramework.xml
+E:\New\ERP_14022017\ERP\ERP.Web\bin\EntityFramework.SqlServer.xml
+E:\New\ERP_14022017\ERP\ERP.Web\bin\EPPlus.xml
+E:\New\ERP_14022017\ERP\ERP.Web\bin\Microsoft.AI.DependencyCollector.xml
+E:\New\ERP_14022017\ERP\ERP.Web\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\New\ERP_14022017\ERP\ERP.Web\bin\Microsoft.AI.Web.xml
+E:\New\ERP_14022017\ERP\ERP.Web\bin\Microsoft.AI.WindowsServer.xml
+E:\New\ERP_14022017\ERP\ERP.Web\bin\Microsoft.ApplicationInsights.xml
+E:\New\ERP_14022017\ERP\ERP.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\New\ERP_14022017\ERP\ERP.Web\bin\Newtonsoft.Json.xml
+E:\New\ERP_14022017\ERP\ERP.Web\bin\System.Net.Http.Formatting.xml
+E:\New\ERP_14022017\ERP\ERP.Web\bin\System.Web.Helpers.xml
+E:\New\ERP_14022017\ERP\ERP.Web\bin\System.Web.Http.xml
+E:\New\ERP_14022017\ERP\ERP.Web\bin\System.Web.Http.WebHost.xml
+E:\New\ERP_14022017\ERP\ERP.Web\bin\System.Web.Mvc.xml
+E:\New\ERP_14022017\ERP\ERP.Web\bin\System.Web.Optimization.xml
+E:\New\ERP_14022017\ERP\ERP.Web\bin\System.Web.Razor.xml
+E:\New\ERP_14022017\ERP\ERP.Web\bin\System.Web.WebPages.xml
+E:\New\ERP_14022017\ERP\ERP.Web\bin\System.Web.WebPages.Deployment.xml
+E:\New\ERP_14022017\ERP\ERP.Web\bin\System.Web.WebPages.Razor.xml
+E:\New\ERP_14022017\ERP\ERP.Web\bin\Antlr3.Runtime.pdb
+E:\New\ERP_14022017\ERP\ERP.Web\obj\Debug\ERP.Web.csprojResolveAssemblyReference.cache
+E:\New\ERP_14022017\ERP\ERP.Web\obj\Debug\ERP.Web.dll
+E:\New\ERP_14022017\ERP\ERP.Web\obj\Debug\ERP.Web.pdb
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\roslyn\csc.exe
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\roslyn\System.Collections.Immutable.dll
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\roslyn\System.Reflection.Metadata.dll
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\roslyn\vbc.exe
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\roslyn\VBCSCompiler.exe
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\roslyn\VBCSCompiler.exe.config
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\ERP.Web.dll.config
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\ERP.Web.dll
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\ERP.Web.pdb
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\Antlr3.Runtime.dll
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\EntityFramework.dll
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\EntityFramework.SqlServer.dll
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\EPPlus.dll
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\Microsoft.AI.Agent.Intercept.dll
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\Microsoft.AI.DependencyCollector.dll
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\Microsoft.AI.Web.dll
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\Microsoft.AI.WindowsServer.dll
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\Microsoft.ApplicationInsights.dll
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\Newtonsoft.Json.dll
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\System.Net.Http.Formatting.dll
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\System.Web.Helpers.dll
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\System.Web.Http.dll
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\System.Web.Http.WebHost.dll
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\System.Web.Mvc.dll
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\System.Web.Optimization.dll
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\System.Web.Razor.dll
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\System.Web.WebPages.Deployment.dll
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\System.Web.WebPages.dll
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\System.Web.WebPages.Razor.dll
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\WebGrease.dll
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\EntityFramework.xml
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\EntityFramework.SqlServer.xml
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\EPPlus.xml
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\Microsoft.AI.DependencyCollector.xml
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\Microsoft.AI.Web.xml
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\Microsoft.AI.WindowsServer.xml
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\Microsoft.ApplicationInsights.xml
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\Newtonsoft.Json.xml
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\System.Net.Http.Formatting.xml
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\System.Web.Helpers.xml
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\System.Web.Http.xml
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\System.Web.Http.WebHost.xml
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\System.Web.Mvc.xml
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\System.Web.Optimization.xml
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\System.Web.Razor.xml
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\System.Web.WebPages.xml
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\System.Web.WebPages.Deployment.xml
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\System.Web.WebPages.Razor.xml
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\bin\Antlr3.Runtime.pdb
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\obj\Debug\ERP.Web.csprojResolveAssemblyReference.cache
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\obj\Debug\ERP.Web.dll
+D:\HOPLONGTECH\hoplong\ERP_17022017\ERP\ERP.Web\obj\Debug\ERP.Web.pdb
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\roslyn\csc.exe
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\roslyn\System.Collections.Immutable.dll
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\roslyn\System.Reflection.Metadata.dll
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\roslyn\vbc.exe
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\roslyn\VBCSCompiler.exe
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\roslyn\VBCSCompiler.exe.config
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\ERP.Web.dll.config
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\ERP.Web.dll
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\ERP.Web.pdb
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\Antlr3.Runtime.dll
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\EntityFramework.dll
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\EntityFramework.SqlServer.dll
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\EPPlus.dll
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\Microsoft.AI.Agent.Intercept.dll
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\Microsoft.AI.DependencyCollector.dll
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\Microsoft.AI.Web.dll
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\Microsoft.AI.WindowsServer.dll
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\Microsoft.ApplicationInsights.dll
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\Microsoft.Web.Infrastructure.dll
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\Newtonsoft.Json.dll
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\System.Net.Http.Formatting.dll
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\System.Web.Helpers.dll
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\System.Web.Http.dll
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\System.Web.Http.WebHost.dll
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\System.Web.Mvc.dll
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\System.Web.Optimization.dll
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\System.Web.Razor.dll
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\System.Web.WebPages.Deployment.dll
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\System.Web.WebPages.dll
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\System.Web.WebPages.Razor.dll
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\WebGrease.dll
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\EntityFramework.xml
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\EntityFramework.SqlServer.xml
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\EPPlus.xml
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\Microsoft.AI.DependencyCollector.xml
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\Microsoft.AI.Web.xml
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\Microsoft.AI.WindowsServer.xml
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\Microsoft.ApplicationInsights.xml
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\Newtonsoft.Json.xml
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\System.Net.Http.Formatting.xml
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\System.Web.Helpers.xml
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\System.Web.Http.xml
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\System.Web.Http.WebHost.xml
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\System.Web.Mvc.xml
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\System.Web.Optimization.xml
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\System.Web.Razor.xml
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\System.Web.WebPages.xml
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\System.Web.WebPages.Deployment.xml
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\System.Web.WebPages.Razor.xml
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\bin\Antlr3.Runtime.pdb
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\obj\Debug\ERP.Web.dll
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\obj\Debug\ERP.Web.pdb
+D:\HOPLONGTECH\New folder\hoplong\ERP_17022017\ERP\ERP.Web\obj\Debug\ERP.Web.csprojResolveAssemblyReference.cache

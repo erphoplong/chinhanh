@@ -1,0 +1,114 @@
+﻿@model ERP.Web.Models.Database.DM_HANG_HOA
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DM_HANG_HOA</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MA_HANG_NHAP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MA_HANG_NHAP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TEN_HANG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TEN_HANG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SERI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SERI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DON_VI_TINH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DON_VI_TINH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MODEL_DAC_BIET)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MODEL_DAC_BIET)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HINH_ANH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HINH_ANH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DAC_TINH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DAC_TINH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GHI_CHU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GHI_CHU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DM_HANG_SP.TEN_NHOM_HANG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DM_HANG_SP.TEN_NHOM_HANG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DM_TAI_KHOAN_HACH_TOAN.TEN_TK)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DM_TAI_KHOAN_HACH_TOAN.TEN_TK)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DM_TAI_KHOAN_HACH_TOAN1.TEN_TK)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DM_TAI_KHOAN_HACH_TOAN1.TEN_TK)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DM_TAI_KHOAN_HACH_TOAN2.TEN_TK)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DM_TAI_KHOAN_HACH_TOAN2.TEN_TK)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MA_HANG_HT }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

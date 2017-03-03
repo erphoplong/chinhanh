@@ -1,0 +1,363 @@
+﻿@model IEnumerable<ERP.Web.Models.Database.DM_HANG_TON_KHO>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+<link href="https://cdn.datatables.net/1.10.13/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+
+<link href="~/TruongAnHCM/Content/css/KhoTAHCM.css" rel="stylesheet" />
+<link href="~/Content/download/dist/css/AdminLTE.css" rel="stylesheet" />
+<script src="~/Content/download/angularjs/angular.min.js"></script>
+<script src="~/TruongAnHCM/Content/js/app.js"></script>
+<script src="~/Content/download/angularjs/dirPagination.js"></script>
+<script src="~/TruongAnHCM/Content/js/KhoTAHCM.js"></script>
+<link href="~/Content/download/bootstrap/css/layout_all.css" rel="stylesheet" />
+<div ng-app="myApp" ng-controller="khoCtrl">
+    <div class="content">
+
+        <div id="quick-access">
+            <form class="form-inline quick-search-form" role="form" action="#">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Type Inventory Code You Want To Search Here" ng-model="search_text">
+                </div>
+                <button type="submit" id="quick-search" class="btn btn-custom"><span class="glyphicon glyphicon-search custom-glyph-color"></span></button>
+            </form>
+        </div>
+        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Add new inventory</button>
+
+        <!-- Modal Thêm mới -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+
+                    <div class="modal-body">
+                        <form class="form-horizontal" name="myForm" novalidate>
+                            <fieldset id="addnewform">
+                                <!-- Form Name -->
+                                <legend>Add new inventory</legend>
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="name">Inventory Code:</label>
+                                    <div class="col-md-4">
+                                        <input type="text" placeholder="Mã kho" class="form-control input-md" ng-model="makho">
+                                    </div>
+                                </div>
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="name">Inventory Name: </label>
+                                    <div class="col-md-4">
+                                        <input type="text" placeholder="Tên kho" class="form-control input-md" ng-model="tenkho">
+                                    </div>
+                                </div>
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="name">Address </label>
+                                    <div class="col-md-4">
+                                        <input type="text" placeholder="Địa chỉ kho" class="form-control input-md" ng-model="diachikho">
+                                    </div>
+                                </div>
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="name">Inventory's Parent Code: </label>
+                                    <div class="col-md-4">
+                                        <input type="text" placeholder="Mã kho cha" class="form-control input-md" ng-model="makhocha">
+                                    </div>
+                                </div>
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="name">Region: </label>
+                                    <div class="col-md-4">
+                                        <input type="text" placeholder="Trực thuộc" class="form-control input-md" ng-model="tructhuoc">
+                                    </div>
+                                </div>
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="ghichu">Note: chú</label>
+                                    <div class="col-md-4">
+                                        <textarea class="form-control" ng-model="ghichu"></textarea>
+                                    </div>
+                                </div>
+                                <!-- Button (Double) -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="anmelden"></label>
+                                    <div class="col-md-8 addnew">
+                                        <button id="addnew" name="addnew" class="btn btn-success" ng-click="add()" data-dismiss="modal">Add New</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <button id="exit" name="exit" class="btn btn-danger" data-dismiss="modal">Exit</button>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end modal-->
+        <!-- Modal Update -->
+        <div class="modal fade" id="myEdit" role="dialog">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+
+                    <div class="modal-body">
+                        <form class="form-horizontal" name="myForm" novalidate>
+                            <fieldset>
+                                <!-- Form Name -->
+                                <legend>Update Inventory</legend>
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="name">Inventory Code: </label>
+                                    <div class="col-md-4">
+                                        <input type="text" placeholder="Mã kho" class="form-control input-md" ng-model="item.MA_KHO" ng-disabled="true">
+                                    </div>
+                                </div>
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="name">Inventory Name: </label>
+                                    <div class="col-md-4">
+                                        <input type="text" placeholder="Tên kho" class="form-control input-md" ng-model="item.TEN_KHO">
+                                    </div>
+                                </div>
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="name">Address: </label>
+                                    <div class="col-md-4">
+                                        <input type="text" placeholder="Địa chỉ" class="form-control input-md" ng-model="item.DIA_CHI_KHO">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="name">Inventory's Parent Code: </label>
+                                    <div class="col-md-4">
+                                        <input type="text" placeholder="Mã kho cha" class="form-control input-md" ng-model="item.MA_KHO_CHA">
+                                    </div>
+                                </div>
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="name">Region: </label>
+                                    <div class="col-md-4">
+                                        <input type="text" placeholder="Trực thuộc" class="form-control input-md" ng-model="item.TRUC_THUOC">
+                                    </div>
+                                </div>
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="name">Note</label>
+                                    <div class="col-md-4">
+                                        <input type="text" placeholder="Ghi chú" class="form-control input-md" ng-model="item.GHI_CHU">
+                                    </div>
+                                </div>
+                                <!-- Button (Double) -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="anmelden"></label>
+                                    <div class="col-md-11 edit">
+                                        <button class="btn btn-success" ng-click="save(item.MA_KHO)" data-dismiss="modal">Save</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <button class="btn btn-danger" data-dismiss="modal">Exit</button>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <!--end modal-->
+        <!-- Modal delete -->
+        <div class="modal fade" id="delete_item" role="dialog">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+
+                    <div class="modal-body">
+                        <form class="form-horizontal" name="myForm" novalidate>
+                            <fieldset>
+                                <!-- Form Name -->
+                                <legend>Delete Inventory</legend>
+                                <center>Are you sure you want to delete <b>{{item.MA_KHO}}</b></center>
+                                <p></p>
+
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="delete"></label>
+                                    <div class="col-md-8">
+                                        <button id="delete" name="delete" class="btn btn-danger" ng-click="delete(item.MA_KHO)" data-dismiss="modal">Delete</button>
+                                        <button id="exit" name="exit" class="btn btn-success" data-dismiss="modal">Exit</button>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <!--end modal-->
+
+        <table id="example" class="table table-striped table-bordered" cellspacing="0" name="tblhanghoa">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Inventory Code</th>
+                    <th>Inventory Name</th>
+                    <th>Address</th>
+                    <th>Region</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr dir-paginate-start="item in filtered = (danhsachkho | filter: {MA_KHO:search_text}) | itemsPerPage:3 " class="hover" ng-class-odd="'odd'" ng-class-even="'even'">
+                    <td>
+                        <button class="expand" ng-if="item.expanded" ng-click="item.expanded = false"><i class="fa minus fa-minus-circle" aria-hidden="true"></i></button>
+                        <button class="expand" type="button" ng-if="!item.expanded" ng-click="item.expanded = true" ng-><i class="fa plus fa-plus-circle" aria-hidden="true"></i></button>
+                    </td>
+                    <td>{{ item.MA_KHO }}</td>
+                    <td>{{item.TEN_KHO}}</td>
+                    <td>{{item.DIA_CHI_KHO}}</td>
+                    <td>{{item.TRUC_THUOC}}</td>
+
+                    <td>
+                        <button class="btn btn-success btn-circle" ng-click="edit(item)" type="button" data-toggle="modal" data-target="#myEdit"><i class="glyphicon glyphicon-edit"></i></button>
+                    </td>
+                    <td>
+                        <button class="btn btn-warning btn-circle" ng-click="edit(item)" type="button" data-toggle="modal" data-target="#delete_item"><i class="glyphicon glyphicon-remove"></i></button>
+                        <!--<button class="btn btn-warning btn-circle" ng-click="delete(item.MA_KHO)"><i class="glyphicon glyphicon-remove"></i></button>-->
+                    </td>
+
+                </tr>
+                <!--Detail row-->
+                <tr ng-if="item.expanded" dir-paginate-end="">
+
+                    <td colspan="9">
+                        <div class="content expandrow">
+
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a data-toggle="tab" href="#chitiet">Chi tiết hàng hóa</a></li>
+                                <li><a data-toggle="tab" href="#tonkho">Tồn kho</a></li>
+                            </ul>
+
+                            <div class="tab-content">
+                                <!--Tab chi tiết hàng hóa-->
+                                <div id="chitiet" class="tab-pane fade in active">
+                                    <fieldset class="col-md-4 first">
+                                        <legend>General</legend>
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label padding" for="name">Mã hàng HT: </label>
+                                            <div class="col-md-8">
+                                                <input type="text" placeholder="Mã hàng hệ thống" class="form-control input-md" ng-model="item.MA_HANG_HT" ng-disabled="true">
+                                            </div>
+                                        </div>
+                                        <!-- Text input-->
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label " for="name">Mã hàng nhập: </label>
+                                            <div class="col-md-8">
+                                                <input type="text" placeholder="Mã hàng nhập" class="form-control input-md" ng-model="item.MA_HANG_NHAP" ng-disabled="true">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label padding" for="name">Tên hàng: </label>
+                                            <div class="col-md-8">
+                                                <input type="text" placeholder="Tên hàng" class="form-control input-md" ng-model="item.TEN_HANG" ng-disabled="true">
+                                            </div>
+                                        </div>
+                                        <!-- Text input-->
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label " for="name">Mã nhóm hàng: </label>
+                                            <div class="col-md-8">
+                                                <select ng-model="item.MA_NHOM_HANG" class="form-control input-md" ng-disabled="true">
+                                                    <option ng-repeat="x in danhsachnhomhang" value="{{x.MA_NHOM_HANG}}">{{x.TEN_NHOM_HANG}}</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label padding" for="name">Seri: </label>
+                                            <div class="col-md-8">
+                                                <input type="text" placeholder="Seri" class="form-control input-md" ng-model="item.SERI " ng-disabled="true">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label padding" for="name">Đơn vị tính: </label>
+                                            <div class="col-md-8">
+                                                <input type="text" placeholder="Đơn vị tính" class="form-control input-md" ng-model="item.DON_VI_TINH" ng-disabled="true">
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+
+                                    <fieldset class="col-md-4 second">
+                                        <legend>Thông tin thêm</legend>
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label" for="name">Model đặc biệt: </label>
+                                            <div class="col-md-8">
+                                                <input type="checkbox" ng-checked="item.MODEL_DAC_BIET==true" ng-model="item.MODEL_DAC_BIET" ng-disabled="true">
+                                            </div>
+                                        </div>
+                                        <!-- Text input-->
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label padding" for="name">Hình ảnh: </label>
+                                            <div class="col-md-8">
+                                                <input type="text" placeholder="Hình ảnh" class="form-control input-md" ng-model="item.HINH_ANH" ng-disabled="true">
+                                            </div>
+                                        </div>
+                                        <!-- Text input-->
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label padding" for="name">Đặc tính: </label>
+                                            <div class="col-md-8">
+                                                <input type="text" placeholder="Đặc tính" class="form-control input-md dactinh" ng-model="item.DAC_TINH" ng-disabled="true">
+                                            </div>
+                                        </div>
+
+
+                                        <!-- Textarea -->
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label padding" for="ghichu">Ghi chú</label>
+                                            <div class="col-md-8">
+                                                <textarea class="form-control" id="ghichu" name="ghichu" ng-model="item.GHI_CHU " ng-disabled="true">Ghi chú</textarea>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                    <fieldset class="col-md-3 third">
+                                        <legend>Tài khoản</legend>
+                                        <div class="form-group">
+                                            <label class="col-md-6 control-label padding" for="name">Hạch toán: </label>
+                                            <div class="col-md-6">
+                                                <input type="text" placeholder="Hạch toán" class="form-control input-md" ng-model="item.TK_HACH_TOAN_KHO" ng-disabled="true">
+                                            </div>
+                                        </div>
+                                        <!-- Text input-->
+                                        <div class="form-group">
+                                            <label class="col-md-6 control-label padding" for="name">Doanh thu: </label>
+                                            <div class="col-md-6">
+                                                <input type="text" placeholder="Doanh thu" class="form-control input-md" ng-model="item.TK_DOANH_THU" ng-disabled="true">
+                                            </div>
+                                        </div>
+                                        <!-- Text input-->
+                                        <div class="form-group">
+                                            <label class="col-md-6 control-label padding" for="name">Chi phí: </label>
+                                            <div class="col-md-6">
+                                                <input type="text" placeholder="Chi phí" class="form-control input-md" ng-model="item.TK_CHI_PHI" ng-disabled="true">
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                </div>
+                                <div id="tonkho" class="tab-pane fade">
+                                    <h3>Menu 2</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="9" style="border: none !important">
+                        <dir-pagination-controls max-size="1" style="float:right;"
+                                                 direction-links="true"
+                                                 boundary-links="true">
+                        </dir-pagination-controls>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+<script src="~/Content/download/angularjs/angular-ui-router.js"></script>

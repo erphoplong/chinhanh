@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HOPLONG_DATABASEModelStoreContainer" CdmEntityContainer="HOPLONG_DATABASEEntities">
+    <EntitySetMapping Name="CCTC_CONG_TY">
+      <EntityTypeMapping TypeName="HOPLONG_DATABASEModel.CCTC_CONG_TY">
+        <MappingFragment StoreEntitySet="CCTC_CONG_TY">
+          <ScalarProperty Name="GHI_CHU" ColumnName="GHI_CHU" />
+          <ScalarProperty Name="CAP_TO_CHUC" ColumnName="CAP_TO_CHUC" />
+          <ScalarProperty Name="CONG_TY_ME" ColumnName="CONG_TY_ME" />
+          <ScalarProperty Name="DIA_CHI_XUAT_HOA_DON" ColumnName="DIA_CHI_XUAT_HOA_DON" />
+          <ScalarProperty Name="DIA_CHI" ColumnName="DIA_CHI" />
+          <ScalarProperty Name="LOGO" ColumnName="LOGO" />
+          <ScalarProperty Name="MST" ColumnName="MST" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="FAX" ColumnName="FAX" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="NGAY_THANH_LAP" ColumnName="NGAY_THANH_LAP" />
+          <ScalarProperty Name="TEN_CONG_TY" ColumnName="TEN_CONG_TY" />
+          <ScalarProperty Name="MA_CONG_TY" ColumnName="MA_CONG_TY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CCTC_MO_HINH_CONG_TY">
+      <EntityTypeMapping TypeName="HOPLONG_DATABASEModel.CCTC_MO_HINH_CONG_TY">
+        <MappingFragment StoreEntitySet="CCTC_MO_HINH_CONG_TY">
+          <ScalarProperty Name="GHI_CHU" ColumnName="GHI_CHU" />
+          <ScalarProperty Name="TEN_MO_HINH" ColumnName="TEN_MO_HINH" />
+          <ScalarProperty Name="MA_MO_HINH" ColumnName="MA_MO_HINH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CCTC_NHAN_VIEN">
+      <EntityTypeMapping TypeName="HOPLONG_DATABASEModel.CCTC_NHAN_VIEN">
+        <MappingFragment StoreEntitySet="CCTC_NHAN_VIEN">
+          <ScalarProperty Name="MA_PHONG_BAN" ColumnName="MA_PHONG_BAN" />
+          <ScalarProperty Name="TRINH_DO_HOC_VAN" ColumnName="TRINH_DO_HOC_VAN" />
+          <ScalarProperty Name="QUE_QUAN" ColumnName="QUE_QUAN" />
+          <ScalarProperty Name="NGAY_SINH" ColumnName="NGAY_SINH" />
+          <ScalarProperty Name="GIOI_TINH" ColumnName="GIOI_TINH" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CCTC_PHONG_BAN">
+      <EntityTypeMapping TypeName="HOPLONG_DATABASEModel.CCTC_PHONG_BAN">
+        <MappingFragment StoreEntitySet="CCTC_PHONG_BAN">
+          <ScalarProperty Name="GHI_CHU" ColumnName="GHI_CHU" />
+          <ScalarProperty Name="MA_CONG_TY" ColumnName="MA_CONG_TY" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="TEN_PHONG_BAN" ColumnName="TEN_PHONG_BAN" />
+          <ScalarProperty Name="MA_PHONG_BAN" ColumnName="MA_PHONG_BAN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CN_CHI_TIET_NGHIEP_VU">
+      <EntityTypeMapping TypeName="HOPLONG_DATABASEModel.CN_CHI_TIET_NGHIEP_VU">
+        <MappingFragment StoreEntitySet="CN_CHI_TIET_NGHIEP_VU">
+          <ScalarProperty Name="MO_TA" ColumnName="MO_TA" />
+          <ScalarProperty Name="ID_NGHIEP_VU" ColumnName="ID_NGHIEP_VU" />
+          <ScalarProperty Name="TEN_CHI_TIET" ColumnName="TEN_CHI_TIET" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CN_NGHIEP_VU">
+      <EntityTypeMapping TypeName="HOPLONG_DATABASEModel.CN_NGHIEP_VU">
+        <MappingFragment StoreEntitySet="CN_NGHIEP_VU">
+          <ScalarProperty Name="TRUC_THUOC" ColumnName="TRUC_THUOC" />
+          <ScalarProperty Name="TEN_NGHIEP_VU" ColumnName="TEN_NGHIEP_VU" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CN_NGHIEP_VU_NHAN_VIEN">
+      <EntityTypeMapping TypeName="HOPLONG_DATABASEModel.CN_NGHIEP_VU_NHAN_VIEN">
+        <MappingFragment StoreEntitySet="CN_NGHIEP_VU_NHAN_VIEN">
+          <ScalarProperty Name="MO_TA" ColumnName="MO_TA" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="ID_CHI_TIET_NGHIEP_VU" ColumnName="ID_CHI_TIET_NGHIEP_VU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CN_NHOM_NGHIEP_VU">
+      <EntityTypeMapping TypeName="HOPLONG_DATABASEModel.CN_NHOM_NGHIEP_VU">
+        <MappingFragment StoreEntitySet="CN_NHOM_NGHIEP_VU">
+          <ScalarProperty Name="DIEN_GIAI" ColumnName="DIEN_GIAI" />
+          <ScalarProperty Name="TEN_NHOM" ColumnName="TEN_NHOM" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CN_NHOM_NGUOI_DUNG_NGHIEP_VU">
+      <EntityTypeMapping TypeName="HOPLONG_DATABASEModel.CN_NHOM_NGUOI_DUNG_NGHIEP_VU">
+        <MappingFragment StoreEntitySet="CN_NHOM_NGUOI_DUNG_NGHIEP_VU">
+          <ScalarProperty Name="ID_NHOM_NGHIEP_VU" ColumnName="ID_NHOM_NGHIEP_VU" />
+          <ScalarProperty Name="ID_NGUOI_DUNG" ColumnName="ID_NGUOI_DUNG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_HANG_SP">
+      <EntityTypeMapping TypeName="HOPLONG_DATABASEModel.DM_HANG_SP">
+        <MappingFragment StoreEntitySet="DM_HANG_SP">
+          <ScalarProperty Name="GHI_CHU" ColumnName="GHI_CHU" />
+          <ScalarProperty Name="MA_NHOM_HANG_CHA" ColumnName="MA_NHOM_HANG_CHA" />
+          <ScalarProperty Name="TEN_NHOM_HANG" ColumnName="TEN_NHOM_HANG" />
+          <ScalarProperty Name="MA_NHOM_HANG" ColumnName="MA_NHOM_HANG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_HANG_TON_KHO">
+      <EntityTypeMapping TypeName="HOPLONG_DATABASEModel.DM_HANG_TON_KHO">
+        <MappingFragment StoreEntitySet="DM_HANG_TON_KHO">
+          <ScalarProperty Name="SL_TON" ColumnName="SL_TON" />
+          <ScalarProperty Name="MA_KHO" ColumnName="MA_KHO" />
+          <ScalarProperty Name="MA_HANG_HT" ColumnName="MA_HANG_HT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_KHO">
+      <EntityTypeMapping TypeName="HOPLONG_DATABASEModel.DM_KHO">
+        <MappingFragment StoreEntitySet="DM_KHO">
+          <ScalarProperty Name="GHI_CHU" ColumnName="GHI_CHU" />
+          <ScalarProperty Name="TRUC_THUOC" ColumnName="TRUC_THUOC" />
+          <ScalarProperty Name="MA_KHO_CHA" ColumnName="MA_KHO_CHA" />
+          <ScalarProperty Name="DIA_CHI_KHO" ColumnName="DIA_CHI_KHO" />
+          <ScalarProperty Name="TEN_KHO" ColumnName="TEN_KHO" />
+          <ScalarProperty Name="MA_KHO" ColumnName="MA_KHO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HT_NGUOI_DUNG">
+      <EntityTypeMapping TypeName="HOPLONG_DATABASEModel.HT_NGUOI_DUNG">
+        <MappingFragment StoreEntitySet="HT_NGUOI_DUNG">
+          <ScalarProperty Name="MA_CONG_TY" ColumnName="MA_CONG_TY" />
+          <ScalarProperty Name="ALLOWED" ColumnName="ALLOWED" />
+          <ScalarProperty Name="IS_ADMIN" ColumnName="IS_ADMIN" />
+          <ScalarProperty Name="AVATAR" ColumnName="AVATAR" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="HO_VA_TEN" ColumnName="HO_VA_TEN" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="CN_CHI_TIET_NHOM_NGHIEP_VU" TypeName="HOPLONG_DATABASEModel.CN_CHI_TIET_NHOM_NGHIEP_VU" StoreEntitySet="CN_CHI_TIET_NHOM_NGHIEP_VU">
+      <EndProperty Name="CN_NHOM_NGHIEP_VU">
+        <ScalarProperty Name="ID" ColumnName="ID_NHOM_NGHIEP_VU" />
+      </EndProperty>
+      <EndProperty Name="CN_CHI_TIET_NGHIEP_VU">
+        <ScalarProperty Name="ID" ColumnName="ID_CHI_TIET_NGHIEP_VU" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <EntitySetMapping Name="DM_TONKHO_HANG">
+      <EntityTypeMapping TypeName="HOPLONG_DATABASEModel.DM_TONKHO_HANG">
+        <MappingFragment StoreEntitySet="DM_TONKHO_HANG">
+          <ScalarProperty Name="SL_TON" ColumnName="SL_TON" />
+          <ScalarProperty Name="MA_NHOM_HANG" ColumnName="MA_NHOM_HANG" />
+          <ScalarProperty Name="MA_HANG_HT" ColumnName="MA_HANG_HT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_HANG_HOA">
+      <EntityTypeMapping TypeName="HOPLONG_DATABASEModel.DM_HANG_HOA">
+        <MappingFragment StoreEntitySet="DM_HANG_HOA">
+          <ScalarProperty Name="XUAT_XU" ColumnName="XUAT_XU" />
+          <ScalarProperty Name="TK_CHI_PHI" ColumnName="TK_CHI_PHI" />
+          <ScalarProperty Name="TK_DOANH_THU" ColumnName="TK_DOANH_THU" />
+          <ScalarProperty Name="TK_HACH_TOAN_KHO" ColumnName="TK_HACH_TOAN_KHO" />
+          <ScalarProperty Name="GHI_CHU" ColumnName="GHI_CHU" />
+          <ScalarProperty Name="DAC_TINH" ColumnName="DAC_TINH" />
+          <ScalarProperty Name="HINH_ANH" ColumnName="HINH_ANH" />
+          <ScalarProperty Name="MODEL_DAC_BIET" ColumnName="MODEL_DAC_BIET" />
+          <ScalarProperty Name="DON_VI_TINH" ColumnName="DON_VI_TINH" />
+          <ScalarProperty Name="SERI" ColumnName="SERI" />
+          <ScalarProperty Name="MA_NHOM_HANG" ColumnName="MA_NHOM_HANG" />
+          <ScalarProperty Name="TEN_HANG" ColumnName="TEN_HANG" />
+          <ScalarProperty Name="MA_HANG_NHAP" ColumnName="MA_HANG_NHAP" />
+          <ScalarProperty Name="MA_HANG_HT" ColumnName="MA_HANG_HT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_TAI_KHOAN_HACH_TOAN">
+      <EntityTypeMapping TypeName="HOPLONG_DATABASEModel.DM_TAI_KHOAN_HACH_TOAN">
+        <MappingFragment StoreEntitySet="DM_TAI_KHOAN_HACH_TOAN">
+          <ScalarProperty Name="DIEN_GIAI" ColumnName="DIEN_GIAI" />
+          <ScalarProperty Name="TK_CAP_CHA" ColumnName="TK_CAP_CHA" />
+          <ScalarProperty Name="TEN_TA" ColumnName="TEN_TA" />
+          <ScalarProperty Name="TINH_CHAT" ColumnName="TINH_CHAT" />
+          <ScalarProperty Name="TEN_TK" ColumnName="TEN_TK" />
+          <ScalarProperty Name="SO_TK" ColumnName="SO_TK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
