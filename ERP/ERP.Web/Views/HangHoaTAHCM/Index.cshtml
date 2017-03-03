@@ -1,0 +1,447 @@
+﻿@model IEnumerable<ERP.Web.Models.Database.DM_HANG_HOA>
+
+@{
+    ViewBag.Title = "Index";
+}
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+<link href="https://cdn.datatables.net/1.10.13/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+
+<link href="~/TruongAnHCM/Content/css/HangHoaTAHCM.css" rel="stylesheet" />
+<link href="~/Content/download/dist/css/AdminLTE.css" rel="stylesheet" />
+<script src="~/Content/download/angularjs/angular.min.js"></script>
+<link href="~/Content/download/bootstrap/css/layout_all.css" rel="stylesheet" />
+<div ng-app="myApp" ng-controller="hanghoaCtrl">
+    <div class="content" ng-controller="tonkhoCtrl">
+
+
+        <div id="quick-access">
+            <form class="form-inline quick-search-form" role="form" action="#">
+                <div class="form-group" style="width: 100%">
+                    <input type="text" style="width: 60%" class="form-control" placeholder="Type System Code You Want To Search Here" ng-model="search_text">
+                </div>
+            </form>
+        </div>
+        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Add New Product</button>
+        <br />
+        <br />
+        <!-- Modal Thêm mới -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+
+                    <div class="modal-body">
+                        <form class="form-horizontal" name="myForm" novalidate>
+                            <fieldset>
+                                <!-- Form Name -->
+                                <legend>Add New Product</legend>
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="name">System Code: </label>
+                                    <div class="col-md-4">
+                                        <input type="text" placeholder="System Code" class="form-control input-md" ng-model="mahanght">
+                                    </div>
+                                </div>
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="name">Product Code: </label>
+                                    <div class="col-md-4">
+                                        <input type="text" placeholder="Product Code" class="form-control input-md" ng-model="mahangnhap">
+                                    </div>
+                                </div>
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="name">Product Name:</label>
+                                    <div class="col-md-4">
+                                        <input type="text" placeholder="Product Name" class="form-control input-md" ng-model="tenhang">
+                                    </div>
+                                </div>
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="name">Maker Code: </label>
+                                    <div class="col-md-4">
+                                        <select ng-model="manhomhang" class="form-control input-md">
+                                            <option ng-repeat="abc in danhsachnhomhang" value="{{abc.MA_NHOM_HANG}}">{{abc.TEN_NHOM_HANG}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="name">Seri: </label>
+                                    <div class="col-md-4">
+                                        <input type="text" placeholder="Seri" class="form-control input-md" ng-model="seri">
+                                    </div>
+                                </div>
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="name">Unit: </label>
+                                    <div class="col-md-4">
+                                        <input type="text" placeholder="Unit" class="form-control input-md" ng-model="donvitinh">
+                                    </div>
+                                </div>
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="name">Special Model: </label>
+                                    <div class="col-md-4">
+                                        <input type="text" placeholder="Special Model" class="form-control input-md" ng-model="modeldacbiet">
+                                    </div>
+                                </div>
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="name">Picture: </label>
+                                    <div class="col-md-4">
+                                        <input type="text" placeholder="Picture" class="form-control input-md" ng-model="hinhanh">
+                                    </div>
+                                </div>
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="name">Properties: </label>
+                                    <div class="col-md-4">
+                                        <input type="text" placeholder="Properties" class="form-control input-md" ng-model="dactinh">
+                                    </div>
+                                </div>
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="name">Inventory Account </label>
+                                    <div class="col-md-4">
+                                        <input type="text" placeholder="Inventory Account" class="form-control input-md" ng-model="tkhachtoankho">
+                                    </div>
+                                </div>
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="name">Sale Account: </label>
+                                    <div class="col-md-4">
+                                        <input type="text" placeholder="Sale Account" class="form-control input-md" ng-model="tkdoanhthu">
+                                    </div>
+                                </div>
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="name">COGS Account </label>
+                                    <div class="col-md-4">
+                                        <input type="text" placeholder="COGS Account" class="form-control input-md" ng-model="tkchiphi">
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="ghichu">Note</label>
+                                    <div class="col-md-4">
+                                        <textarea class="form-control" ng-model="ghichu"></textarea>
+                                    </div>
+                                </div>
+                                <!-- Button (Double) -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="anmelden"></label>
+                                    <div class="col-md-8 addnew">
+                                        <button id="addnew" name="addnew" class="btn btn-success" ng-click="add()" data-dismiss="modal">Add New</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <button id="exit" name="exit" class="btn btn-danger" data-dismiss="modal">Exit</button>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end modal-->
+        <!-- Modal Update -->
+        <div class="modal fade" id="myEdit" role="dialog">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+
+                    <div class="modal-body">
+                        <form class="form-horizontal" name="myForm" novalidate>
+                            <fieldset>
+                                <!-- Form Name -->
+                                <legend>Update Product</legend>
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="name">System Code: </label>
+                                    <div class="col-md-4">
+                                        <input type="text" placeholder="System Code" class="form-control input-md" ng-model="item.MA_HANG_HT" ng-disabled="true">
+                                    </div>
+                                </div>
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="name">Product Code: </label>
+                                    <div class="col-md-4">
+                                        <input type="text" placeholder="Product Code" class="form-control input-md" ng-model="item.MA_HANG_NHAP">
+                                    </div>
+                                </div>
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="name">Product Name: </label>
+                                    <div class="col-md-4">
+                                        <input type="text" placeholder="Product Name" class="form-control input-md" ng-model="item.TEN_HANG">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="name">Maker Code: </label>
+                                    <div class="col-md-4">
+                                        <select ng-model="item.MA_NHOM_HANG" class="form-control input-md">
+                                            <option ng-repeat="x in danhsachnhomhang" value="{{x.MA_NHOM_HANG}}">{{x.TEN_NHOM_HANG}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="name">Seri: </label>
+                                    <div class="col-md-4">
+                                        <input type="text" placeholder="Seri" class="form-control input-md" ng-model="item.SERI">
+                                    </div>
+                                </div>
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="name">Unit: </label>
+                                    <div class="col-md-4">
+                                        <input type="text" placeholder="Unit" class="form-control input-md" ng-model="item.DON_VI_TINH">
+                                    </div>
+                                </div>
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="name">Special Model: </label>
+                                    <div class="col-md-4">
+                                        <input type="text" placeholder="Special Model" class="form-control input-md" ng-model="item.MODEL_DAC_BIET">
+                                    </div>
+                                </div>
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="name">Picture: </label>
+                                    <div class="col-md-4">
+                                        <input type="text" placeholder="Picture" class="form-control input-md" ng-model="item.HINH_ANH">
+                                    </div>
+                                </div>
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="name">Properties: </label>
+                                    <div class="col-md-4">
+                                        <input type="text" placeholder="Properties" class="form-control input-md" ng-model="item.DAC_TINH">
+                                    </div>
+                                </div>
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="name">Inventory Account: </label>
+                                    <div class="col-md-4">
+                                        <input type="text" placeholder="Inventory Account" class="form-control input-md" ng-model="item.TK_HACH_TOAN_KHO">
+                                    </div>
+                                </div>
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="name">Sale Account: </label>
+                                    <div class="col-md-4">
+                                        <input type="text" placeholder="Sale Account" class="form-control input-md" ng-model="item.TK_DOANH_THU">
+                                    </div>
+                                </div>
+                                <!-- Text input-->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="name">COGS Account: </label>
+                                    <div class="col-md-4">
+                                        <input type="text" placeholder="COGS Account" class="form-control input-md" ng-model="item.TK_CHI_PHI">
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="ghichu">Note</label>
+                                    <div class="col-md-4">
+                                        <textarea class="form-control" id="ghichu" name="ghichu" ng-model="item.GHI_CHU"></textarea>
+                                    </div>
+                                </div>
+                                <!-- Button (Double) -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="anmelden"></label>
+                                    <div class="col-md-11 edit">
+                                        <button class="btn btn-success" ng-click="save(item.MA_HANG_HT)" data-dismiss="modal">Save</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <button class="btn btn-danger" data-dismiss="modal">Exit</button>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <!--end modal-->
+        <!-- Modal delete -->
+        <div class="modal fade" id="delete_item" role="dialog">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+
+                    <div class="modal-body">
+                        <form class="form-horizontal" name="myForm" novalidate>
+                            <fieldset>
+                                <!-- Form Name -->
+                                <legend>Delete Product</legend>
+                                <center>Are you sure you want to delete <b>{{item.MA_HANG_HT}}</b></center>
+                                <p></p>
+
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="delete"></label>
+                                    <div class="col-md-8">
+                                        <button id="delete" name="delete" class="btn btn-danger" ng-click="delete(item.MA_HANG_HT)" data-dismiss="modal">Delete</button>
+                                        <button id="exit" name="exit" class="btn btn-success" data-dismiss="modal">Exit</button>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <!--end modal-->
+        <div class="modal fade" id="chitiethanghoa" role="dialog" >
+            <div class="modal-dialog modal-lg" style="width:80%">
+                <div class="modal-content" style="min-height: 500px;">
+
+                    <div class="modal-body">
+                        <div class="content expandrow">
+
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a data-toggle="tab" href="#chitiet">Product Details</a></li>
+                            </ul>
+
+                            <div class="tab-content">
+                                <!--Tab chi tiết hàng hóa-->
+                                <div id="chitiet" class="tab-pane fade in active">
+                                    <div class="col-md-1">
+                                        <img src="~/Content/download/dist/img/avatar.png" style="width: 100%;height: 120px;" />
+                                    </div>
+                                    <div class="col-md-3">
+                                        <table class="table noborder">
+                                            <tr>
+                                                <td>System Code:</td>
+                                                <td>{{item.MA_HANG_HT}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Product Code:</td>
+                                                <td>{{item.MA_HANG_NHAP}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Product Name:</td>
+                                                <td>{{item.TEN_HANG}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Maker Code:</td>
+                                                <td>{{item.MA_NHOM_HANG}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Seri:</td>
+                                                <td>{{item.SERI}}</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <table class="table noborder">
+                                            <tr>
+                                                <td>Inventory Code:</td>
+                                                <td>{{item.TK_HACH_TOAN_KHO}}1</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Sale Account</td>
+                                                <td>{{item.TK_DOANH_THU}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>COGS Account</td>
+                                                <td>{{item.TK_CHI_PHI}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Unit</td>
+                                                <td>{{item.DON_VI_TINH}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Properties</td>
+                                                <td>{{item.DAC_TINH}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Note</td>
+                                                <td>{{item.GHI_CHU}}</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <table class="table noborder table-fill">
+                                            <thead>
+                                                <tr>
+                                                    <th>Inventory Code</th>
+                                                    <th>Number In Stock</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ng-repeat="tonkho in danhsachtonkho">
+                                                    <td>{{tonkho.MA_KHO}}</td>
+                                                    <td>{{tonkho.SL_TON}}</td>
+                                                </tr>
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <td><strong style="font-size: 20px">Total in Stock:</strong></td>
+                                                    <td>{{getTotal('SL_TON')}}</td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <table id="example" class="table " cellspacing="0" name="tblhanghoa" >
+            <thead>
+                <tr>
+                    <th ng-mouseover="mahangHT=true;" ng-mouseleave="mahangHT=false;">System Code<span ng-show="mahangHT">{{ showmahangHT.title }}</span></th>
+                    <th ng-mouseover="ma_hang_nhap=true;" ng-mouseleave="ma_hang_nhap=false;">Product Code<span ng-show="ma_hang_nhap">{{ showmahangnhap.title }}</span></th>
+                    <th ng-mouseover="ten_hang=true;" ng-mouseleave="ten_hang=false;">Product Name<span ng-show="ten_hang">{{ showtenhang.title }}</span></th>
+                    <th ng-mouseover="ma_nhom_hang=true;" ng-mouseleave="ma_nhom_hang=false;">Maker Code<span ng-show="ma_nhom_hang">{{ showmanhomhang.title }}</span></th>
+                    <th ng-mouseover="don_vi_tinh=true;" ng-mouseleave="don_vi_tinh=false;">Unit<span ng-show="don_vi_tinh">{{ showdonvitinh.title }}</span></th>
+                    <th ng-mouseover="model_dac_biet=true;" ng-mouseleave="model_dac_biet=false;">Special Model<span ng-show="model_dac_biet">{{ showmodeldacbiet.title }}</span></th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr dir-paginate-start="item in filtered = (danhsachhanghoa | filter: {MA_HANG_HT:search_text}) | itemsPerPage: 15 " class="hover" ng-click="edit(item);get_tonkho(item.MA_HANG_HT)" ng-class-odd="'odd'" ng-class-even="'even'">
+                    <td class="text-left" data-toggle="modal" data-target="#chitiethanghoa">{{item.MA_HANG_HT}}</td>
+                    <td class="text-left" data-toggle="modal" data-target="#chitiethanghoa">{{item.MA_HANG_NHAP}}</td>
+                    <td class="text-left" data-toggle="modal" data-target="#chitiethanghoa">{{item.TEN_HANG}}</td>
+                    <td class="text-left" style="width: 8%" data-toggle="modal" data-target="#chitiethanghoa"><img ng-src="~/Content/self-writing/Images/{{item.MA_NHOM_HANG}}.png" style="width: 100%;height: 20%;"/></td>
+                    <td data-toggle="modal" data-target="#chitiethanghoa">{{item.DON_VI_TINH | uppercase}}</td>
+                    <td><input type="checkbox" ng-checked="item.MODEL_DAC_BIET==true" ng-model="item.MODEL_DAC_BIET"><br></td>
+
+                    <td>
+                        <button class="btn btn-success btn-circle" ng-click="edit(item)" data-dismiss="modal" type="button" data-toggle="modal" data-target="#myEdit"><i class="glyphicon glyphicon-edit"></i></button>
+                    </td>
+                    <td>
+                        <button class="btn btn-warning btn-circle" ng-click="edit(item)" type="button" data-dismiss="modal" data-toggle="modal" data-target="#delete_item"><i class="glyphicon glyphicon-remove"></i></button>
+                        <!--<button class="btn btn-warning btn-circle" ng-click="delete(item.MA_KHO)"><i class="glyphicon glyphicon-remove"></i></button>-->
+                    </td>
+                </tr>
+                <!--Detail row-->
+                <tr ng-if="item.expanded" dir-paginate-end="">
+                    <td>
+                        
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="9" style="border: none !important">
+                        <dir-pagination-controls max-size="1" style="float:right;"
+                                                 direction-links="true"
+                                                 boundary-links="true">
+                        </dir-pagination-controls>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>       
+    </div>
+    
+</div>
+<script src="~/Content/download/angularjs/angular-ui-router.js"></script>
+
+

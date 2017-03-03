@@ -1,0 +1,42 @@
+﻿@model ERP.Web.Models.Database.DM_HANG_TON_KHO
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DM_HANG_TON_KHO</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SL_TON)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SL_TON)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DM_HANG_HOA.MA_HANG_NHAP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DM_HANG_HOA.MA_HANG_NHAP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DM_KHO.TEN_KHO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DM_KHO.TEN_KHO)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

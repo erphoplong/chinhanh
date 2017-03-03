@@ -1,0 +1,350 @@
+﻿
+@{
+    ViewBag.Title = "Import_Hanghoa";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>HOPLONG | Trang chủ</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.6 -->
+    <link href="~/Content/download/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Roboto:100,400,300,500,700' rel='stylesheet' type='text/css'>
+    <link href="~/Content/download/dist/css/AdminLTE.css" rel="stylesheet" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+    
+    <link href="~/Content/self-writing/Layout-CSS.css" rel="stylesheet" />
+    <link href="~/TruongAnHCM/Content/css/ImportTAHCM.css" rel="stylesheet" />
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+    <!--<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Thêm hàng mới</button>-->
+    <div class="container">
+        <div class="card">
+            <div class="container-fliud">
+                <div class="wrapper row">
+                    <div class="preview col-md-5">
+                        <div class="preview-pic tab-content">
+                            <img src="~/Content/self-writing/Images/avatar.png" style="padding-top:20px" />
+                        </div>
+                    </div>
+                    <div class="details col-md-5">
+                        <h3 class="product-title">Description</h3>
+                        <p class="product-description">sghdasdjklasjkfsdjklfgjksdjkfgsdhgjksdfgsdgsdfsjkfajksjk</p>
+
+                        <br />
+                        <table style="width: 100%;text-align: center;">
+                            <tr>
+                                <td style="padding-top: 15px;">
+                                    <center>
+                                        <!--Button Products-->
+                                        <div class="style_prevu_kit" style="background-color:#5BC0DE;">
+                                            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" style="border: none; border-radius:16px"><i class="fa fa-gift fa-3x"></i></button>
+                                        </div>
+                                        <!------------------------------------------------------------>
+                                    </center>
+                                </td>
+                                <td style="padding-top: 15px;">
+                                    <center>
+                                        <!--Button Stock-->
+                                        <div class="style_prevu_kit" style="background-color:#5BC0DE;">
+                                            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#modalhangtonkho" style="border: none; border-radius:16px"><i class="fa fa-database fa-3x"></i></button>
+                                        </div>
+                                        <!------------------------------------------------------------>
+                                    </center>
+                                </td>
+                                <td style="padding-top: 15px;">
+                                    <center>
+                                        <!--Button Inventory-->
+                                        <div class="style_prevu_kit" style="background-color:#5BC0DE;">
+                                            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#modalkho" style="border: none; border-radius:16px"><i class="fa fa-home fa-3x"></i></button>
+                                        </div>
+                                        <!------------------------------------------------------------>
+                                    </center>
+                                </td>
+                                <td style="padding-top: 15px;">
+                                    <center>
+                                        <!--Button Department-->
+                                        <div class="style_prevu_kit" style="background-color:#5BC0DE;">
+                                            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#modalphongban" style="border: none; border-radius:16px"><i class="fa fa-building fa-3x"></i></button>
+                                        </div>
+                                        <!------------------------------------------------------------>
+                                    </center>
+                                <td style="padding-top: 15px;">
+                                    <center>
+                                        <!--Button Users-->
+                                        <div class="style_prevu_kit" style="background-color:#5BC0DE;">
+                                            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#modalnguoidung" style="border: none; border-radius:16px"><i class="fa fa-user fa-3x"></i></button>
+                                        </div>
+                                        <!------------------------------------------------------------>
+                                    </center>
+                                </td>
+                            </tr>
+                            <tr style="border-top: 0px">
+                                <td style="padding-top: 15px;padding-bottom: 15px">Products</td>
+                                <td style="padding-top: 15px;padding-bottom: 15px">Stock</td>
+                                <td style="padding-top: 15px;padding-bottom: 15px">Inventory</td>
+                                <td style="padding-top: 15px;padding-bottom: 15px">Department</td>
+                                <td style="padding-top: 15px;padding-bottom: 15px">Users</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!------------------------------------------------------------>
+    <!-- Modal HANG HOA-->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <br />
+
+                    @using (Html.BeginForm("Import_Hanghoa", "ImportExcelTAHCM", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+
+                            <!-- Form Name -->
+
+                            <h1>Hàng Hóa</h1>
+                            <hr />
+                            <input type="file" name="UploadedFile" class="file" value="Choose File From Your Computer">
+                            <br />
+                            <input type="submit" class="btn btn-success" value="Add" />
+                            <p style="color:blue">@ViewBag.Message</p>
+                            <p style="color:blue">@ViewBag.Information</p>
+                            <p style="color:red">@ViewBag.Error</p>
+
+
+                    }
+                        <p>Click on the file to download the file Example:<p>
+                        <a href="~/Content/download/File mẫu/New Microsoft Word Document.docx" download="docFile">
+                            <img style="width:10%" sy border="0" src="~/Content/download/File mẫu/doc.jpg" alt="docFile">
+                        </a>
+
+</div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Exit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--END MODAL-->
+    <br />
+    <!-- Modal Tồn kho hãng-->
+    <div class="modal fade" id="modaltonkhohang" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <br />
+                    @using (Html.BeginForm("Import_TonKhoHang", "ImportExcelTAHCM", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+
+                            <!-- Form Name -->
+                        <h1>Hàng Hóa</h1>
+
+                        <hr />
+                            <input type="file" name="UploadedFile" class="file" value="Choose File From Your Computer">
+                            <br />
+                            <input type="submit" class="btn btn-success" value="Add" />
+                            <p style="color:blue">@ViewBag.Message</p>
+                            <p style="color:blue">@ViewBag.Information</p>
+                            <p style="color:red">@ViewBag.Error</p>
+
+
+                    }
+                        <p>Click on the file to download the file Example:<p>
+                        <a href="~/Content/download/File mẫu/New Microsoft Word Document.docx" download="docFile">
+                            <img style="width:10%" sy border="0" src="~/Content/download/File mẫu/doc.jpg" alt="docFile">
+                        </a>
+</div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Exit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--END MODAL-->
+    <br />
+    <!-- Modal Phòng ban-->
+    <div class="modal fade" id="modalphongban" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <br />
+                    @using (Html.BeginForm("Import_PhongBan", "ImportExcelTAHCM", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+
+                            <!-- Form Name -->
+
+                            <h1>Department</h1>
+                            <hr />
+                            <input type="file" name="UploadedFile" class="file" value="Choose File From Your Computer">
+                            <br />
+                            <input type="submit" class="btn btn-success" value="Add" />
+                            <p style="color:blue">@ViewBag.Message</p>
+                            <p style="color:blue">@ViewBag.Information</p>
+                            <p style="color:red">@ViewBag.Error</p>
+                        }
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Exit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--END MODAL-->
+    <div class="modal fade" id="modalHangTonKho" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <br />
+                    <div class="col-md-6">
+                        @using (Html.BeginForm("Import_HangTonKho", "ImportExcelTAHCM", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                        {
+
+                            <!-- Form Name -->
+
+                            <h1>Stock</h1>
+                            <hr />
+                            <input type="file" name="UploadedFile" class="file" value="Choose File From Your Computer">
+                            <br />
+                            <input type="submit" class="btn btn-success" value="Add" />         
+
+                        }
+
+                    </div>
+                    <div class="col-md-6">
+                        @using (Html.BeginForm("Update_HangTonKho", "ImportExcelTAHCM", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                        {
+
+                            <!-- Form Name -->
+
+                            <h1>Update Stock</h1>
+                            <hr />
+                            <input type="file" name="UpdateFile" class="file" value="Choose File From Your Computer">
+                            <br />
+                            <input type="submit" class="btn btn-success" value="Add" />
+                            <p style="color:blue">@ViewBag.Message</p>
+                            <p style="color:blue">@ViewBag.Information</p>
+                            <p style="color:red">@ViewBag.Error</p>
+
+
+                        }
+                    </div>
+                    <p style="color:blue">@ViewBag.Message</p>
+                    <p style="color:blue">@ViewBag.Information</p>
+                    <p style="color:red">@ViewBag.Error</p>
+                    <p>Click on the file to download the file Example:<p>
+                        <a href="~/Content/download/File mẫu/New Microsoft Word Document.docx" download="docFile">
+                            <img style="width:10%" sy border="0" src="~/Content/download/File mẫu/doc.jpg" alt="docFile">
+                        </a>
+</div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Exit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalKho" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <br />
+                    @using (Html.BeginForm("Import_Kho", "ImportExcelTAHCM", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+
+                            <!-- Form Name -->
+
+                        <h1>Inventory</h1>
+                        <hr />
+                        <input type="file" name="UploadedFile" class="file" value="Choose File From Your Computer">
+                        <br />
+                        <input type="submit" class="btn btn-success" value="Add" />
+                            <p style="color:blue">@ViewBag.Message</p>
+                            <p style="color:blue">@ViewBag.Information</p>
+                            <p style="color:red">@ViewBag.Error</p>
+
+
+                    }
+                        <p>Click on the file to download the file Example:<p>
+                        <a href="~/Content/download/File mẫu/New Microsoft Word Document.docx" download="docFile">
+                            <img style="width:10%" sy border="0" src="~/Content/download/File mẫu/doc.jpg" alt="docFile">
+                        </a>
+</div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Exit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalNhanvien" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <br />
+                    <div class="col-md-6">
+                        @using (Html.BeginForm("Import_Nhanvien", "ImportExcelTAHCM", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                        {
+
+                            <!-- Form Name -->
+
+                            <h1>Employee</h1>
+                            <hr />
+                            <input type="file" name="UploadedFile" class="file" value="Choose File From Your Computer">
+                            <br />
+                            <input type="submit" class="btn btn-success" value="Add" />                          
+
+                        }
+                    </div>
+                    <div class="col-md-6">
+                        @using (Html.BeginForm("Update_Nhanvien", "ImportExcelTAHCM", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                        {
+
+                            <!-- Form Name -->
+
+                            <h1>Update Employee</h1>
+                            <hr />
+                            <input type="file" name="UpdateFile" class="file" value="Choose File From Your Computer">
+                            <br />
+                            <input type="submit" class="btn btn-success" value="Add" />
+                            <p style="color:blue">@ViewBag.Message</p>
+                            <p style="color:blue">@ViewBag.Information</p>
+                            <p style="color:red">@ViewBag.Error</p>
+
+
+                        }
+                    </div>
+                    <p style="color:blue">@ViewBag.Message</p>
+                    <p style="color:blue">@ViewBag.Information</p>
+                    <p style="color:red">@ViewBag.Error</p>
+
+                    <p>Click on the file to download the file Example:<p>
+                        <a href="~/Content/download/File mẫu/New Microsoft Word Document.docx" download="docFile">
+                            <img style="width:10%" sy border="0" src="~/Content/download/File mẫu/doc.jpg" alt="docFile">
+                        </a>
+            </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Exit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- jQuery 2.2.3 -->
+    <script src="~/Content/download/plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+
+</body>
+
+</html>
+
+
+

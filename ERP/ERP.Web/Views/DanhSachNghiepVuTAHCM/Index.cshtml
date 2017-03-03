@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ERP.Web.Models.Database.CN_NGHIEP_VU>
+
+@{
+    ViewBag.Title = "Danh sách nghiệp vụ";
+}
+<style>
+    tr, th, td {
+        border: 1px solid #ddd;
+    }
+</style>
+
+<h2 style="text-align:center">Nghiệp Vụ Hệ Thống</h2>
+
+
+
+<div>
+    @Html.Raw(TempData["err"])
+</div>
+<p>
+    @Html.ActionLink("Cập nhật nghiệp vụ", "Capnhat_Nghiepvu")
+</p>
+<div class="container">
+    <div class="row col-md-6 col-md-offset-2 custyle">
+
+        <table class="table table-striped custab">
+            <thead>
+
+
+                <tr>
+                    <th>Mã nghiệp vụ</th>
+                    <th>Tên nghiệp vụ</th>
+                    <th>Xem chi tiết</th>
+                </tr>
+            </thead>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TEN_NGHIEP_VU)
+                    </td>
+                    <td>
+                        <a href="/HopLong/ChiTietNghiepVu/Index" class="btn btn-success btn-default" style="color: white;"><span class="fa icon fa-list" style="margin-right: 5px;"></span>Chi tiết nghiệp vụ</a>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

@@ -1,0 +1,384 @@
+﻿@model IEnumerable<ERP.Web.Models.Database.HT_NGUOI_DUNG>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+<link href="https://cdn.datatables.net/1.10.13/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="~/TruongAnHCM/Content/css/NguoiDungTAHCM.css" rel="stylesheet" />
+
+<link href="~/Content/download/dist/css/AdminLTE.css" rel="stylesheet" />
+<script src="~/Content/download/angularjs/angular.min.js"></script>
+<link href="~/Content/download/bootstrap/css/layout_all.css" rel="stylesheet" />
+
+<div ng-app="myApp" ng-controller="userCtrl">
+    <div class="content">
+
+        <div id="quick-access">
+            <form class="form-inline quick-search-form" role="form" action="#">
+                <div class="form-group" style="width: 100%">
+                    <input type="text" style="width: 60%" class="form-control" placeholder="Type Fullname You Want To Search Here" ng-model="search_text">
+                </div>
+            </form>
+        </div>
+        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Add New User</button>
+
+        <!-- Modal Add New -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+
+                    <div class="modal-body">
+                        <form class="form-horizontal" name="myForm" novalidate>
+                            <fieldset id="addnewform">
+                                <!-- Form Name -->
+                                <legend>Add New User</legend>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="name">Username </label>
+                                        <div class="col-md-8">
+                                            <input type="text" placeholder="Username" class="form-control input-md" ng-model="username">
+                                        </div>
+                                    </div>
+                                    <!-- Text input-->
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="name">Password: </label>
+                                        <div class="col-md-8">
+                                            <input type="text" placeholder="Password" class="form-control input-md" ng-model="password">
+                                        </div>
+                                    </div>
+                                    <!-- Text input-->
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="name">Fullname: </label>
+                                        <div class="col-md-8">
+                                            <input type="text" placeholder="Fullname" class="form-control input-md" ng-model="hovaten">
+                                        </div>
+                                    </div>
+                                    <!-- Text input-->
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="name">Phone Number: </label>
+                                        <div class="col-md-8">
+                                            <input type="text" placeholder="Phone Number" class="form-control input-md" ng-model="sdt">
+                                        </div>
+                                    </div>
+                                    <!-- Text input-->
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="name">Email </label>
+                                        <div class="col-md-8">
+                                            <input type="text" placeholder="Email" class="form-control input-md" ng-model="email">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" style="padding-top: 0px !important" for="name">Admin </label>
+                                        <div class="col-md-3">
+                                            <input type="checkbox" ng-model="admin">
+                                        </div>
+                                        <label class="col-md-3 control-label" style="padding-top: 0px !important" for="name">Allowed </label>
+                                        <div class="col-md-3">
+                                            <input type="checkbox" ng-model="allowed">
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="name">Gender: </label>
+                                        <div class="col-md-8">
+                                            <input type="text" placeholder="Gender" class="form-control input-md" ng-model="gioitinh">
+                                        </div>
+                                    </div>
+                                    <!-- Text input-->
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="name">Birthday </label>
+                                        <div class="col-md-8">
+                                            <input type="text" mask="39/19/9999" placeholder="dd/MM/yyyy" class="form-control input-md" ng-model="ngaysinh">
+                                        </div>
+                                    </div>
+                                    <!-- Text input-->
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="name">Native Place: </label>
+                                        <div class="col-md-8">
+                                            <input type="text" placeholder="Native Place" class="form-control input-md" ng-model="quequan">
+                                        </div>
+                                    </div>
+                                    <!-- Text input-->
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="name">Education: </label>
+                                        <div class="col-md-8">
+                                            <input type="text" placeholder="Education" class="form-control input-md" ng-model="trinhdohocvan">
+                                        </div>
+                                    </div>
+                                    <!-- Text input-->
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="name">Department ID </label>
+                                        <div class="col-md-8">
+                                            <input type="text" placeholder="Department ID" class="form-control input-md" ng-model="maphongban">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Button (Double) -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="anmelden"></label>
+                                    <div class="col-md-12 addnew">
+                                        <button id="addnew" name="addnew" class="btn btn-success" ng-click="add()" data-dismiss="modal">Add New</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <button id="exit" name="exit" class="btn btn-danger" data-dismiss="modal">Exit</button>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end modal-->
+        <!-- Modal Update -->
+        <div class="modal fade" id="myEdit" role="dialog">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+
+                    <div class="modal-body">
+                        <form class="form-horizontal" name="myForm" novalidate>
+                            <fieldset>
+                                <!-- Form Name -->
+                                <legend>Sửa người dùng</legend>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="name">Username </label>
+                                        <div class="col-md-8">
+                                            <input type="text" placeholder="Username" class="form-control input-md" ng-model="item.USERNAME" ng-disabled="true">
+                                        </div>
+                                    </div>
+                                    <!-- Text input-->
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="name">Password: </label>
+                                        <div class="col-md-8">
+                                            <input type="text" placeholder="Password" class="form-control input-md" ng-model="item.PASSWORD">
+                                        </div>
+                                    </div>
+                                    <!-- Text input-->
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="name">Fullname: </label>
+                                        <div class="col-md-8">
+                                            <input type="text" placeholder="Fullname" class="form-control input-md" ng-model="item.HO_VA_TEN">
+                                        </div>
+                                    </div>
+                                    <!-- Text input-->
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="name">Phone Number: </label>
+                                        <div class="col-md-8">
+                                            <input type="text" placeholder="Phone Number" class="form-control input-md" ng-model="item.SDT">
+                                        </div>
+                                    </div>
+                                    <!-- Text input-->
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="name">Email </label>
+                                        <div class="col-md-8">
+                                            <input type="text" placeholder="Email" class="form-control input-md" ng-model="item.EMAIL">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label" style="padding-top: 0px !important" for="name">Admin </label>
+                                        <div class="col-md-3">
+                                            <input type="checkbox" ng-model="item.IS_ADMIN">
+                                        </div>
+                                        <label class="col-md-3 control-label" style="padding-top: 0px !important" for="name">Allowed </label>
+                                        <div class="col-md-3">
+                                            <input type="checkbox" ng-model="item.ALLOWED">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="name">Gender: </label>
+                                        <div class="col-md-8">
+                                            <input type="text" placeholder="Username" class="form-control input-md" ng-model="nhanvien.GIOI_TINH">
+                                        </div>
+                                    </div>
+                                    <!-- Text input-->
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="name">Birthday </label>
+                                        <div class="col-md-8">
+                                            <input type="text" mask="39/19/9999" placeholder="dd/MM/yyyy" class="form-control input-md" ng-model="nhanvien.NGAY_SINH">
+                                        </div>
+                                    </div>
+                                    <!-- Text input-->
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="name">Native Place: </label>
+                                        <div class="col-md-8">
+                                            <input type="text" placeholder="Native Place" class="form-control input-md" ng-model="nhanvien.QUE_QUAN">
+                                        </div>
+                                    </div>
+                                    <!-- Text input-->
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="name">Education: </label>
+                                        <div class="col-md-8">
+                                            <input type="text" placeholder="Education" class="form-control input-md" ng-model="nhanvien.TRINH_DO_HOC_VAN">
+                                        </div>
+                                    </div>
+                                    <!-- Text input-->
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="name">Department ID </label>
+                                        <div class="col-md-8">
+                                            <input type="text" placeholder="Department ID" class="form-control input-md" ng-model="nhanvien.MA_PHONG_BAN">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="name">Company ID </label>
+                                        <div class="col-md-8">
+                                            <input type="text" placeholder="Company ID" class="form-control input-md" ng-model="item.MA_CONG_TY" ng-disabled="true">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Button (Double) -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="anmelden"></label>
+                                    <div class="col-md-12 addnew">
+                                        <button id="addnew" name="addnew" class="btn btn-success" ng-click="save(item.USERNAME)" data-dismiss="modal">Lưu</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <button id="exit" name="exit" class="btn btn-danger" data-dismiss="modal">Exit</button>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <!--end modal-->
+        <!-- Modal delete -->
+        <div class="modal fade" id="delete_item" role="dialog">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+
+                    <div class="modal-body">
+                        <form class="form-horizontal" name="myForm" novalidate>
+                            <fieldset>
+                                <!-- Form Name -->
+                                <legend>Delete User</legend>
+                                <center>Are you sure you want to delete <b>{{item.USERNAME}}</b></center>
+                                <p></p>
+
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="delete"></label>
+                                    <div class="col-md-8">
+                                        <button id="delete" name="delete" class="btn btn-danger" ng-click="delete(item.ID)" data-dismiss="modal">Delete</button>
+                                        <button id="exit" name="exit" class="btn btn-success" data-dismiss="modal">Exit</button>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <!--end modal-->
+
+        <table id="example" class="table table-striped table-bordered" cellspacing="0" name="tblhanghoa" ng-controller="nhanvienCtrl">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Fullname</th>
+                    <th>Phone Number</th>
+                    <th>Email</th>
+                    <th>Company</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr dir-paginate-start="item in filtered = (danhsachuser | filter: {HO_VA_TEN:search_text}) | itemsPerPage:15 " class="hover" ng-class-odd="'odd'" ng-class-even="'even'">
+                    <td>
+                        <button class="expand" ng-if="item.expanded" ng-click="item.expanded = false"><i class="fa minus fa-minus-circle" aria-hidden="true"></i></button>
+                        <button class="expand" type="button" ng-if="!item.expanded" ng-click="item.expanded = true ; get_nhanvien(item.USERNAME)" ng-><i class="fa plus fa-plus-circle" aria-hidden="true"></i></button>
+                    </td>
+                    <td class="text-left">{{item.HO_VA_TEN }}</td>
+                    <td class="text-left">{{item.SDT}}</td>
+                    <td class="text-left">{{item.EMAIL}}</td>
+                    <td>{{item.MA_CONG_TY}}</td>
+                    <td><a href="/TruongAnHCM/NghiepVuNguoiDungTAHCM/phanquyen/{{item.USERNAME}}" class="btn btn_icon_permission btn-default"><i class="fa fa-cog" style="margin-right: 5px;" aria-hidden="true"></i>Permission</a> &nbsp;&nbsp;</td>
+                </tr>
+                <!--Detail row-->
+                <tr ng-if="item.expanded" dir-paginate-end="">
+
+                    <td colspan="9">
+                        <div class="content expandrow">
+
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a data-toggle="tab" href="#chitiet">Details</a></li>
+                            </ul>
+
+                            <div class="tab-content">
+                                <div class="content">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad">
+
+
+                                            <div class="panel panel-info">
+                                                <div class="panel-heading">
+                                                    <h3 class="panel-title">{{item.HO_VA_TEN}}</h3>
+                                                </div>
+                                                <div class="panel-body">
+                                                    <div class="row">
+                                                        <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="http://www.hit4hit.org/img/login/user-icon-6.png" class="img-circle img-responsive"> </div>
+                                                        <div class="col-md-9 col-lg-9 ">
+                                                            <table class="table table-user-information">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>Gender:</td>
+                                                                        <td>{{nhanvien.GIOI_TINH}}</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Birthday:</td>
+                                                                        <td>{{nhanvien.NGAY_SINH | date:'dd/MM/yyyy' }}</td>
+                                                                    </tr>
+
+                                                                    <tr>
+                                                                    <tr>
+                                                                        <td>Native Place</td>
+                                                                        <td>{{nhanvien.QUE_QUAN}}</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Education</td>
+                                                                        <td>{{nhanvien.TRINH_DO_HOC_VAN}}</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Department ID</td>
+                                                                        <td>{{nhanvien.MA_PHONG_BAN}}</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td colspan="2">
+                                                                            <button class="btn btn-success btn-circle" ng-click="edit(item);update_nv(nhanvien)" type="button" data-toggle="modal" data-target="#myEdit"><i class="glyphicon glyphicon-edit" style="margin-right: 5px"></i>Edit</button>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="9" style="border: none !important">
+                        <dir-pagination-controls max-size="1" style="float:right;"
+                                                 direction-links="true"
+                                                 boundary-links="true">
+                        </dir-pagination-controls>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+<script src="~/Content/download/angularjs/angular-ui-router.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ngMask/3.1.1/ngMask.min.js"></script>
