@@ -32,8 +32,15 @@
          folder instead of downloading all of them to reduce the load. -->
     <link href="~/Content/download/bootstrap/css/layout_all.css" rel="stylesheet" />
     <link href="~/Content/self-writing/Layout-CSS.css" rel="stylesheet" />
-    <link href="~/TruongAnHCM/Content/css/LayoutTAHCM.css" rel="stylesheet" />
+
+    <link href="~/Content/self-writing/css/LayoutTAHCM.css" rel="stylesheet" />
+
     
+    <script src="~/Content/download/angularjs/angular.min.js"></script>
+    <script src="~/Content/self-writing/js/app.js"></script>
+    <script src="~/Content/self-writing/js/dirPagination.js"></script>
+    <script src="~/Content/self-writing/js/Service.js"></script>
+    <script src="~/Content/self-writing/js/Controller.js"></script>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
     <div class="wrapper">
@@ -43,7 +50,7 @@
                 <!-- mini logo for sidebar mini 50x50 pixels -->
                 <span class="logo-mini" style="color: white"><img src="~/Content/self-writing/Images/logo-TA.png" width="30" height="40" /></span>
                 <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg" style="color: white;"><img src="~/Content/self-writing/Images/logo-TA.png" width="120" height="40" style="margin-right: 10px" />TAHCM</span>
+                <span class="logo-lg" style="color: white;"><img src="~/Content/self-writing/Images/logo-TA.png" width="120" height="40" style="margin-right: 10px" /></span>
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top" style="background: deepskyblue">
@@ -57,14 +64,14 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">System<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="/TruongAnHCM/DanhSachNghiepVuTAHCM/Index">Specialist Skill</a></li>
-                                <li><a href="/TruongAnHCM/GiamDocChiNhanhTAHCM/Index">Leaders</a></li>
+                                <li><a href="/DanhSachNghiepVuTAHCM/Index">Specialist Skill</a></li>
+                                <li><a href="/GiamDocChiNhanhTAHCM/Index">Leaders</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Folder <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="/TruongAnHCM/ImportExcelTAHCM/Import_Hanghoa">Import from excel</a></li>
+                                <li><a href="/ImportExcelTAHCM/Import_Hanghoa">Import from excel</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
@@ -73,7 +80,7 @@
                                 <li class="dropdown-submenu">
                                     <a href="#">Account</a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="/TruongAnHCM/TaiKhoanHachToanTAHCM/Index">System Account</a></li>
+                                        <li><a href="/TaiKhoanHachToanTAHCM/Index">System Account</a></li>
                                         <li><a href="#">Tài khoản ngầm định</a></li>
                                         <li><a href="#">Tài khoản kết chuyển</a></li>
                                         <li><a href="#">Định khoản tự động</a></li>
@@ -82,8 +89,8 @@
                                 <li class="dropdown-submenu">
                                     <a href="#">Organizational structure</a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="/TruongAnHCM/PhongBanTAHCM/Index">Department</a></li>
-                                        <li><a href="/TruongAnHCM/Nguoidung/Index">User</a></li>
+                                        <li><a href="/PhongBanTAHCM/Index">Department</a></li>
+                                        <li><a href="/Nguoidung/Index">User</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown-submenu">
@@ -91,15 +98,15 @@
                                     <ul class="dropdown-menu">
                                         <li><a href="#">Client</a></li>
                                         <li><a href="#">Supplier</a></li>
-                                        <li><a href="/TruongAnHCM/CCTC_NHAN_VIENTAHCM/Index">Employee</a></li>
+                                        <li><a href="/CCTC_NHAN_VIENTAHCM/Index">Employee</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown-submenu">
                                     <a href="#">Supplies Product</a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="/TruongAnHCM/HangHoaTAHCM/Index">Product</a></li>
-                                        <li><a href="/TruongAnHCM/KhoTAHCM/Index">Inventory Item</a></li>
-                                        <li><a href="/TruongAnHCM/HangspTAHCM/Index">Brand</a></li>
+                                        <li><a href="/HangHoaTAHCM/Index">Product</a></li>
+                                        <li><a href="/KhoTAHCM/Index">Inventory Item</a></li>
+                                        <li><a href="/HangspTAHCM/Index">Brand</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -278,6 +285,7 @@
         <div class="control-sidebar-bg"></div>
     </div>
     <!-- jQuery 2.2.3 -->
+    <link href="~/Content/download/bootstrap/css/layout_all.css" rel="stylesheet" />
     <script src="~/Content/download/plugins/jQuery/jquery-2.2.3.min.js"></script>
     <!-- jQuery UI 1.11.4 -->
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
@@ -286,10 +294,7 @@
     <script src="~/Content/download/plugins/fastclick/fastclick.js"></script>
     <script src="~/Content/download/dist/js/app.min.js"></script>
     <script src="~/Content/self-writing/js/nav_hoplong_multilevel.js"></script>
-    <script src="~/TruongAnHCM/Content/js/app.js"></script>
-    <script src="~/Content/download/angularjs/dirPagination.js"></script>
-    <script src="~/TruongAnHCM/Content/js/Service.js"></script>
-    <script src="~/TruongAnHCM/Content/js/Controller.js"></script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ngMask/3.1.1/ngMask.min.js"></script>
 </body>
 </html>
